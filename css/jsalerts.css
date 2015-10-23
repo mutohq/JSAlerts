@@ -1,0 +1,78 @@
+*
+{
+    font-family: "Avenir";
+    font-weight: lighter;
+}
+
+.notification-sandbox
+{
+    height: auto;
+    z-index: 99999;
+    position: absolute;
+    /*right: 4em;
+    top: 2em;*/
+}
+
+.frame
+{
+    min-height: 40px;
+    min-width: 250px;
+    max-width: 250px;
+    height: auto;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    position: relative;
+    margin: 10px 0;
+    padding: 0px 10px;
+}
+
+.slideIn
+{
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: slideIn;
+}
+
+.slideOut
+{
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: slideOut;
+}
+
+.red
+{
+    background-color: #ff0000;
+}
+
+.text
+{
+    color: #eee;
+}
+
+
+
+/* Define transitions here */
+@-webkit-keyframes slideIn
+{
+    from
+    {
+        right: -100em;
+    }
+
+    to
+    {
+        right: 0.5em;
+    }
+}
+
+@-webkit-keyframes slideOut
+{
+    from
+    {
+        top: 0em;
+    }
+
+    to
+    {
+        top: -100em;
+    }
+}
