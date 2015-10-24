@@ -28,13 +28,11 @@
 
 .slideIn
 {
-    -webkit-animation-duration: 0.4s;
     -webkit-animation-name: slideIn;
 }
 
 .slideOut
 {
-    -webkit-animation-duration: 0.4s;
     -webkit-animation-name: slideOut;
 }
 

@@ -65,8 +65,8 @@ function JSAlerts(params)
     // 4. animationOut      -->     The class that is used to animate-out the notification
     // 5. style             -->     The class that is used to display the notification
     // 6. autoClose         -->     true/false. Auto closes the notification. Default behavior is to autoclose when duration is mentioned.
-    // 7. animateInDuration -->     Duration of animation during entry
-    // 8. animateOutDuration-->     Duration of animation during exit
+    // 7. animateInDuration -->     Duration of animation during entry. Value is in ms. Default is 400.
+    // 8. animateOutDuration-->     Duration of animation during exit. Value is in ms. Default is 400.
     // 9. closeButtonColor  -->     Color of the close button. Defaults to black.
     //
     //
@@ -155,7 +155,7 @@ function JSAlerts(params)
         else
         {
             console.log("No animateInDuration found");
-            this.animateInDuration = "0.4s";
+            this.animateInDuration = "400";
         }
         /* Check for animateOutDuration */
         if (parameters.hasOwnProperty('animateOutDuration'))
@@ -166,7 +166,7 @@ function JSAlerts(params)
         else
         {
             console.log("No animateOutDuration found");
-            this.animateOutDuration = "0.4s";
+            this.animateOutDuration = "400";
         }
         /* Check for closeButtonColor */
         if (parameters.hasOwnProperty('closeButtonColor'))
@@ -180,12 +180,6 @@ function JSAlerts(params)
             this.closeButtonColor = "#000";
         }
 
-
-
-        // this.text = typeof text !== 'undefined' ?  text : "Hey";
-        // this.duration = typeof duration !== 'undefined' ?  duration : "3000";
-        // this.animationIn = typeof animationIn !== 'undefined' ?  animationIn : "slideIn";
-        // this.animationOut = typeof animationOut !== 'undefined' ?  animationOut : "slideOut";
         var object = this;
         var el = document.createElement("div");
 
@@ -212,6 +206,11 @@ function JSAlerts(params)
         //el.className = "frame red text slideIn";
         el.appendChild(el_content);
         el.className = "frame" + " " + this.style + " " + this.animationIn;
+
+        //-------------------------------------------------------------
+        //Check for browser type here --> whether it is webkit based or IE or moz.
+        el.style.WebkitAnimationDuration = parseFloat(this.animateInDuration/1000).toString() + "s";
+        //-------------------------------------------------------------
 
 
 
@@ -272,10 +271,16 @@ function JSAlerts(params)
                 //console.log("animationOut is "+object.animationOut)
                 el.className += " " + object.animationOut;
 
+
+                //-------------------------------------------------------------
+                //Check for browser type here --> whether it is webkit based or IE or moz.
+                el.style.WebkitAnimationDuration = parseFloat(object.animateOutDuration/1000).toString() + "s";
+                //-------------------------------------------------------------
+
                 window.setTimeout(function()
                 {
                     resolve(el);
-                }, 400);
+                }, object.animateOutDuration);
             }
         )
         destroy_promise.then
