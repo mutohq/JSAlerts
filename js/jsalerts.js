@@ -1,6 +1,35 @@
 function JSAlerts(params)
 {
     /* Assign object methods  */
+    console.log(navigator.userAgent)
+    //Set the userAgent attribute here
+    if (navigator.userAgent.indexOf('Chrome') != -1)
+    {
+        console.log("Browser is Chrome");
+        this.browser_type = "Webkit";
+    }
+    else if (navigator.userAgent.indexOf('Safari') != -1)
+    {
+        console.log("Broswer is Safari");
+        this.browser_type = "Webkit";
+    }
+    else if (navigator.userAgent.indexOf('Firefox') != -1)
+    {
+        console.log("Browser is Firefox");
+        this.browser_type = "Moz";
+    }
+    else if (navigator.userAgent.indexOf('Opera') != -1)
+    {
+        console.log("Browser is Opera");
+        this.browser_type = "O";
+    }
+
+    else if (navigator.userAgent.indexOf("MSIE") != -1)
+    {
+        console.log("Browser is IE");
+        this.browser_type = "IE";
+    }
+
     this.parentEl = document.createElement("div");
     parentEl = this.parentEl;
     this.parentEl.className = "notification-sandbox";
@@ -271,7 +300,22 @@ function JSAlerts(params)
 
         //-------------------------------------------------------------
         //Check for browser type here --> whether it is webkit based or IE or moz.
-        el.style.WebkitAnimationDuration = parseFloat(this.animateInDuration/1000).toString() + "s";
+        if (this.browser_type == "Webkit")
+        {
+            el.style.WebkitAnimationDuration = parseFloat(this.animateInDuration/1000).toString() + "s";
+        }
+        else if (this.browser_type == "MSIE")
+        {
+            el.style.animationDuration = parseFloat(this.animateInDuration/1000).toString() + "s";
+        }
+        else if (this.browser_type == "Moz")
+        {
+            el.style.MozAnimationDuration = parseFloat(this.animateInDuration/1000).toString() + "s";
+        }
+        else if (this.browser_type == "O")
+        {
+            el.style.animationDuration = parseFloat(this.animateInDuration/1000).toString() + "s";
+        }
         //-------------------------------------------------------------
 
 
@@ -328,13 +372,32 @@ function JSAlerts(params)
                 object.beforeLeave();    //Call beforeLeave here, so that the callback is fired just before the animationOut kicks in.
                 //-------------------------------------------------------------
                 //Check for browser type here --> whether it is webkit based or IE or moz.
-                el.style.WebkitAnimationDuration = parseFloat(object.animateOutDuration/1000).toString() + "s";
+                //el.style.WebkitAnimationDuration = parseFloat(object.animateOutDuration/1000).toString() + "s";
+
+
+                if (this.browser_type == "Webkit")
+                {
+                    el.style.WebkitAnimationDuration = parseFloat(object.animateOutDuration/1000).toString() + "s";
+                }
+                else if (this.browser_type == "MSIE")
+                {
+                    el.style.animationDuration = parseFloat(object.animateOutDuration/1000).toString() + "s";
+                }
+                else if (this.browser_type == "Moz")
+                {
+                    el.style.MozAnimationDuration = parseFloat(object.animateOutDuration/1000).toString() + "s";
+                }
+                else if (this.browser_type == "O")
+                {
+                    el.style.animationDuration = parseFloat(object.animateOutDuration/1000).toString() + "s";
+                }
                 //-------------------------------------------------------------
 
                 window.setTimeout(function()
                 {
-                    object.afterLeave();    //Call afterLeave right after the animation completes, and before the notification is removed from the parent element.
+
                     resolve(el);
+                    object.afterLeave();    //Call afterLeave right after the animation completes, and before the notification is removed from the parent element.
                 }, object.animateOutDuration);
             }
         )

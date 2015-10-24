@@ -8,7 +8,7 @@
 {
     height: auto;
     z-index: 99999;
-    position: absolute;
+    position: fixed;
     /*right: 4em;
     top: 2em;*/
 }
@@ -24,16 +24,6 @@
     position: relative;
     margin: 10px 0;
     padding: 0px 10px;
-}
-
-.slideInRight
-{
-    -webkit-animation-name: slideInRight;
-}
-
-.slideOutTop
-{
-    -webkit-animation-name: slideOutTop;
 }
 
 .error
@@ -78,32 +68,4 @@
 {
     background-color: #00ff00;
     color: #000;
-}
-
-
-/* Define transitions here */
-@-webkit-keyframes slideInRight
-{
-    from
-    {
-        right: -100em;
-    }
-
-    to
-    {
-        right: 0.5em;
-    }
-}
-
-@-webkit-keyframes slideOutTop
-{
-    from
-    {
-        top: 0em;
-    }
-
-    to
-    {
-        top: -100em;
-    }
 }

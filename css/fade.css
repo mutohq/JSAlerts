@@ -1,0 +1,429 @@
+/* Define In classes here */
+
+.fadeIn
+{
+    -moz-animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+/*.fadeInRight
+{
+    -moz-animation-name: fadeInRight;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+.fadeInTop
+{
+    -moz-animation-name: fadeInTop;
+    -webkit-animation-name: fadeInTop;
+    animation-name: fadeInTop;
+}
+
+.fadeInBottom
+{
+    -moz-animation-name: fadeInBottom;
+    -webkit-animation-name: fadeInBottom;
+    animation-name: fadeInBottom;
+}*/
+
+
+
+
+
+/* Define Out classes here */
+
+.fadeOut
+{
+    -moz-animation-name: fadeOut;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+/*.fadeOutRight
+{
+    -moz-animation-name: fadeOutRight;
+    -webkit-animation-name: fadeOutRight;
+    animation-name: fadeOutRight;
+}
+
+.fadeOutTop
+{
+    -moz-animation-name: fadeOutTop;
+    -webkit-animation-name: fadeOutTop;
+    animation-name: fadeOutTop;
+}
+
+.fadeOutBottom
+{
+    -moz-animation-name: fadeOutBottom;
+    -webkit-animation-name: fadeOutBottom;
+    animation-name: fadeOutBottom;
+}*/
+
+
+
+/* Define In transitions here */
+@-moz-keyframes fadeIn
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+
+/*@-moz-keyframes fadeInRight
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+
+
+@-webkit-keyframes fadeInRight
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInTop
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeInTop
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInTop
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInBottom
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeInBottom
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInBottom
+{
+    from
+    {
+
+        opacity: 0;
+    }
+
+    to
+    {
+
+        opacity: 1;
+    }
+}*/
+
+
+
+
+
+
+/* Define Out transitions here */
+@-moz-keyframes fadeOut
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fadeOut
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+
+/*@-moz-keyframes fadeOutRight
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeOutRight
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutRight
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeOutTop
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeOutTop
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutTop
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeOutBottom
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fadeOutBottom
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutBottom
+{
+    from
+    {
+
+        opacity: 1;
+    }
+
+    to
+    {
+
+        opacity: 0;
+    }
+}*/
