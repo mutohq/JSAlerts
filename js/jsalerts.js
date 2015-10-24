@@ -245,8 +245,14 @@ function JSAlerts(params)
                 // console.log("Value from promise is "+el);
                 // console.log("parentEl is "+parentEl);
                 // console.log("child object is "+object);
-                object.destroy(el);
-                console.log("Died a natural death")
+
+                if (object.autoClose)
+                {
+                    object.destroy(el);
+                    console.log("Died a natural death");
+                }
+
+
 
             }
         ).catch(function(error)
