@@ -10,6 +10,7 @@ Features
 4. Cross browser support.
 5. No dependencies --> written completely in JavaScript (Browser must support Promises, though).
 6. Very minimal. Goal is to have a non-minified version within 20kB.
+7. Programmatically destroy the notification, or set a timeout, or let the user destroy the notification.
 
 Completed
 =========
@@ -17,4 +18,3 @@ Completed
 2. Any animations can be used to animate notifications.
 3. Any style can be applied to the notifications. Hence, the color, background-color, font-size, etc. can be customized.
 4. HTML text can be used to display the notification. As long as the text is valid HTML, JSAlerts will be able to display it.
-

@@ -68,8 +68,8 @@ function JSAlerts(params)
     // 7. animateInDuration -->     Duration of animation during entry. Value is in ms. Default is 400.
     // 8. animateOutDuration-->     Duration of animation during exit. Value is in ms. Default is 400.
     // 9. closeButtonColor  -->     Color of the close button. Defaults to black.
-    // 10. closeButton      -->     true/false. Option to display the 'x' to close the notification. Default behavior is to display it.
-    //
+    //10. closeButton       -->     true/false. Option to display the 'x' to close the notification. Default behavior is to display it.
+    //11. frame             -->     The class that styles the notification frame.
     //
     //
 
@@ -111,7 +111,7 @@ function JSAlerts(params)
         else
         {
             console.log("No animationIn found");
-            this.animationIn = "slideIn";
+            this.animationIn = "slideInRight";
         }
         /* Check for animationOut */
         if (parameters.hasOwnProperty('animationOut'))
@@ -122,7 +122,7 @@ function JSAlerts(params)
         else
         {
             console.log("No animationOut found");
-            this.animationOut = "slideOut";
+            this.animationOut = "slideOutTop";
         }
         /* Check for style */
         if (parameters.hasOwnProperty('style'))
@@ -133,7 +133,7 @@ function JSAlerts(params)
         else
         {
             console.log("No style found");
-            this.style = "error text";
+            this.style = "error";
         }
         /* Check for autoClose */
         if (parameters.hasOwnProperty('autoClose'))
@@ -190,6 +190,17 @@ function JSAlerts(params)
             console.log("No closeButtonColor found");
             this.closeButtonColor = "#000";
         }
+        /* Check for frame */
+        if (parameters.hasOwnProperty('frame'))
+        {
+            console.log("Has frame and is "+parameters.frame);
+            this.frame = parameters.frame;
+        }
+        else
+        {
+            console.log("No frame found");
+            this.frame = "frame";
+        }
 
 
         var object = this;
@@ -218,9 +229,9 @@ function JSAlerts(params)
         var el_content = document.createElement("div");
         el_content.innerHTML = this.text;   //Can also take HTML text as input --> this makes it simpler to extend and include HTML.
         // el.innerHTML = this.text;   //Can also take HTML text as input --> this makes it simpler to extend and include HTML.
-        //el.className = "frame error text slideIn";
+        //el.className = "frame error text slideInRight";
         el.appendChild(el_content);
-        el.className = "frame" + " " + this.style + " " + this.animationIn;
+        el.className = this.frame + " " + this.style + " " + this.animationIn;
 
         //-------------------------------------------------------------
         //Check for browser type here --> whether it is webkit based or IE or moz.
@@ -287,8 +298,8 @@ function JSAlerts(params)
         (
             function(resolve, reject)
             {
-                //el.className = "frame error text slideOut";
-                //el.className += " slideOut";
+                //el.className = "frame error text slideOutTop";
+                //el.className += " slideOutTop";
                 //console.log("animationOut is "+object.animationOut)
                 el.className += " " + object.animationOut;
 
@@ -327,8 +338,8 @@ function JSAlerts(params)
         /* Assign the variables */
         this.text = typeof text !== 'undefined' ?  text : "Hey";
         this.duration = typeof duration !== 'undefined' ?  duration : "0.2";
-        this.animationIn = typeof animationIn !== 'undefined' ?  animationIn : "slideIn";
-        this.animationOut = typeof animationOut !== 'undefined' ?  animationOut : "slideOut";
+        this.animationIn = typeof animationIn !== 'undefined' ?  animationIn : "slideInRight";
+        this.animationOut = typeof animationOut !== 'undefined' ?  animationOut : "slideOutTop";
     }
 
 }
