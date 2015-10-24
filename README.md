@@ -29,3 +29,4 @@ Completed
 11. Any errors during promise resolution are caught and reported on the console. At this point, no errors are reported, but can be altered in the future.
 12. Events are supported.
 13. Fade and Slide animations have been completed. These are placeholder animations that can be used right out of the box. Can add other custom animations.
+14. Notifications' position has been changed from absolute to fixed. They will always be displayed on the screen, unlike previously, where there was a chance of the viewer being in a different absolute position of the screen.
