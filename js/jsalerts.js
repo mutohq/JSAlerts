@@ -133,7 +133,7 @@ function JSAlerts(params)
         else
         {
             console.log("No style found");
-            this.style = "red text";
+            this.style = "error text";
         }
         /* Check for autoClose */
         if (parameters.hasOwnProperty('autoClose'))
@@ -218,7 +218,7 @@ function JSAlerts(params)
         var el_content = document.createElement("div");
         el_content.innerHTML = this.text;   //Can also take HTML text as input --> this makes it simpler to extend and include HTML.
         // el.innerHTML = this.text;   //Can also take HTML text as input --> this makes it simpler to extend and include HTML.
-        //el.className = "frame red text slideIn";
+        //el.className = "frame error text slideIn";
         el.appendChild(el_content);
         el.className = "frame" + " " + this.style + " " + this.animationIn;
 
@@ -287,7 +287,7 @@ function JSAlerts(params)
         (
             function(resolve, reject)
             {
-                //el.className = "frame red text slideOut";
+                //el.className = "frame error text slideOut";
                 //el.className += " slideOut";
                 //console.log("animationOut is "+object.animationOut)
                 el.className += " " + object.animationOut;
