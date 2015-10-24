@@ -68,7 +68,7 @@ function JSAlerts(params)
     // 7. animateInDuration -->     Duration of animation during entry. Value is in ms. Default is 400.
     // 8. animateOutDuration-->     Duration of animation during exit. Value is in ms. Default is 400.
     // 9. closeButtonColor  -->     Color of the close button. Defaults to black.
-    //
+    // 10. closeButton      -->     true/false. Option to display the 'x' to close the notification. Default behavior is to display it.
     //
     //
     //
@@ -168,6 +168,17 @@ function JSAlerts(params)
             console.log("No animateOutDuration found");
             this.animateOutDuration = "400";
         }
+        /* Check for closeButton */
+        if (parameters.hasOwnProperty('closeButton'))
+        {
+            console.log("Has closeButton and is "+parameters.closeButton);
+            this.closeButton = parameters.closeButton;
+        }
+        else
+        {
+            console.log("No closeButton found");
+            this.closeButton = true;
+        }
         /* Check for closeButtonColor */
         if (parameters.hasOwnProperty('closeButtonColor'))
         {
@@ -180,24 +191,28 @@ function JSAlerts(params)
             this.closeButtonColor = "#000";
         }
 
+
         var object = this;
         var el = document.createElement("div");
 
-        //Attach the close button to the element here
-        var close_button = document.createElement("input");
-        close_button.value = "x";
-        close_button.type = "button";
-        close_button.style.color = this.closeButtonColor;
-        close_button.className = "close-button";
-
-        //Add event handlers of close_button here
-        close_button.onclick = function()
+        //Attach the close button to the element here if this.closeButton is true.
+        if (this.closeButton)
         {
-            object.destroy(el);
+            var close_button = document.createElement("input");
+            close_button.value = "x";
+            close_button.type = "button";
+            close_button.style.color = this.closeButtonColor;
+            close_button.className = "close-button";
+
+            //Add event handlers of close_button here
+            close_button.onclick = function()
+            {
+                object.destroy(el);
+            }
+
+
+            el.appendChild(close_button);
         }
-
-
-        el.appendChild(close_button);
 
 
         var el_content = document.createElement("div");
