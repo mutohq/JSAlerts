@@ -64,10 +64,10 @@ function JSAlerts(params)
     // 3. animationIn       -->     The class that is used to animate-in the notification
     // 4. animationOut      -->     The class that is used to animate-out the notification
     // 5. style             -->     The class that is used to display the notification
-    // 6. autoClose         -->     true/false. Auto closes the notification. Default behavior is to autoclose when duration is mentioned. Will not autoclose in case duration isn't mentioned.
+    // 6. autoClose         -->     true/false. Auto closes the notification. Default behavior is to autoclose when duration is mentioned.
     // 7. animateInDuration -->     Duration of animation during entry
     // 8. animateOutDuration-->     Duration of animation during exit
-    //
+    // 9. closeButtonColor  -->     Color of the close button. Defaults to black.
     //
     //
     //
@@ -135,6 +135,51 @@ function JSAlerts(params)
             console.log("No style found");
             this.style = "red text";
         }
+        /* Check for autoClose */
+        if (parameters.hasOwnProperty('autoClose'))
+        {
+            console.log("Has autoClose and is "+parameters.autoClose);
+            this.autoClose = parameters.autoClose;
+        }
+        else
+        {
+            console.log("No autoClose found");
+            this.autoClose = true;
+        }
+        /* Check for animateInDuration */
+        if (parameters.hasOwnProperty('animateInDuration'))
+        {
+            console.log("Has animateInDuration and is "+parameters.animateInDuration);
+            this.animateInDuration = parameters.animateInDuration;
+        }
+        else
+        {
+            console.log("No animateInDuration found");
+            this.animateInDuration = "0.4s";
+        }
+        /* Check for animateOutDuration */
+        if (parameters.hasOwnProperty('animateOutDuration'))
+        {
+            console.log("Has animateOutDuration and is "+parameters.animateOutDuration);
+            this.animateOutDuration = parameters.animateOutDuration;
+        }
+        else
+        {
+            console.log("No animateOutDuration found");
+            this.animateOutDuration = "0.4s";
+        }
+        /* Check for closeButtonColor */
+        if (parameters.hasOwnProperty('closeButtonColor'))
+        {
+            console.log("Has closeButtonColor and is "+parameters.closeButtonColor);
+            this.closeButtonColor = parameters.closeButtonColor;
+        }
+        else
+        {
+            console.log("No closeButtonColor found");
+            this.closeButtonColor = "#000";
+        }
+
 
 
         // this.text = typeof text !== 'undefined' ?  text : "Hey";
@@ -143,9 +188,32 @@ function JSAlerts(params)
         // this.animationOut = typeof animationOut !== 'undefined' ?  animationOut : "slideOut";
         var object = this;
         var el = document.createElement("div");
-        el.innerHTML = this.text;   //Can also take HTML text as input --> this makes it simpler to extend and include HTML.
+
+        //Attach the close button to the element here
+        var close_button = document.createElement("input");
+        close_button.value = "x";
+        close_button.type = "button";
+        close_button.style.color = this.closeButtonColor;
+        close_button.className = "close-button";
+
+        //Add event handlers of close_button here
+        close_button.onclick = function()
+        {
+            object.destroy(el);
+        }
+
+
+        el.appendChild(close_button);
+
+
+        var el_content = document.createElement("div");
+        el_content.innerHTML = this.text;   //Can also take HTML text as input --> this makes it simpler to extend and include HTML.
+        // el.innerHTML = this.text;   //Can also take HTML text as input --> this makes it simpler to extend and include HTML.
         //el.className = "frame red text slideIn";
+        el.appendChild(el_content);
         el.className = "frame" + " " + this.style + " " + this.animationIn;
+
+
 
 
         /* fire --> fires the notification */
