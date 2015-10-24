@@ -12,6 +12,7 @@ Features
 6. Very minimal. Goal is to have a non-minified version within 20kB.
 7. Programmatically destroy the notification, or set a timeout, or let the user destroy the notification.
 8. Events support - beforeEnter, afterEnter, beforeLeave, afterLeave, onClick.
+9. Built-in animations.
 
 Completed
 =========
@@ -27,3 +28,4 @@ Completed
 10. animateInDuration and animateOutDuration are functioning.
 11. Any errors during promise resolution are caught and reported on the console. At this point, no errors are reported, but can be altered in the future.
 12. Events are supported.
+13. Fade and Slide animations have been completed. These are placeholder animations that can be used right out of the box. Can add other custom animations.
