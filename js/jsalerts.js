@@ -32,7 +32,7 @@ function JSAlerts(params)
     else if (params.hasOwnProperty('bottom'))
     {
         //Assign bottom position to the parentElement
-        console.log("bottom is present and value is "+params.bottom)
+
         this.parentEl.style.bottom = params.bottom;
         //Top is present. Check for left or right property
         if (params.hasOwnProperty('right'))
@@ -70,138 +70,171 @@ function JSAlerts(params)
     // 9. closeButtonColor  -->     Color of the close button. Defaults to black.
     //10. closeButton       -->     true/false. Option to display the 'x' to close the notification. Default behavior is to display it.
     //11. frame             -->     The class that styles the notification frame.
-    //
-    //
+    //12. beforeEnter       -->     Function that is called before entering the viewport. This is called before animationIn begins.
+    //13. afterEnter        -->     Function that is called right after entering the viewport and after the animationIn concludes.
+    //14. beforeLeave       -->     Function that is called just before leaving, or before the animationOut kicks in.
+    //15. afterLeave        -->     Function that is called right after animationOut concludes. This is when the notification completely leaves the viewport.
+    //16. onClick           -->     Function that is called when the notification is clicked.
 
     //this.Notify = function(text, duration, animationIn, animationOut)
     this.Notify = function(parameters)
     {
         /* This method creates a notification */
 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
         /* Assign the variables */
 
         /* Check for HTML text */
         if (parameters.hasOwnProperty('text'))
         {
-            console.log("Has text");
             this.text = parameters.text;
         }
         else
         {
-            console.log("No text found");
             this.text = "Hello from JSAlerts!";
         }
         /* Check for duration */
         if (parameters.hasOwnProperty('duration'))
         {
-            console.log("Has duration");
             this.duration = parameters.duration;
         }
         else
         {
-            console.log("No duration found");
             this.duration = "3000";
         }
         /* Check for animationIn */
         if (parameters.hasOwnProperty('animationIn'))
         {
-            console.log("Has animationIn");
             this.animationIn = parameters.animationIn;
         }
         else
         {
-            console.log("No animationIn found");
             this.animationIn = "slideInRight";
         }
         /* Check for animationOut */
         if (parameters.hasOwnProperty('animationOut'))
         {
-            console.log("Has animationOut");
             this.animationOut = parameters.animationOut;
         }
         else
         {
-            console.log("No animationOut found");
             this.animationOut = "slideOutTop";
         }
         /* Check for style */
         if (parameters.hasOwnProperty('style'))
         {
-            console.log("Has style and is "+parameters.style);
             this.style = parameters.style;
         }
         else
         {
-            console.log("No style found");
             this.style = "error";
         }
         /* Check for autoClose */
         if (parameters.hasOwnProperty('autoClose'))
         {
-            console.log("Has autoClose and is "+parameters.autoClose);
             this.autoClose = parameters.autoClose;
         }
         else
         {
-            console.log("No autoClose found");
             this.autoClose = true;
         }
         /* Check for animateInDuration */
         if (parameters.hasOwnProperty('animateInDuration'))
         {
-            console.log("Has animateInDuration and is "+parameters.animateInDuration);
             this.animateInDuration = parameters.animateInDuration;
         }
         else
         {
-            console.log("No animateInDuration found");
             this.animateInDuration = "400";
         }
         /* Check for animateOutDuration */
         if (parameters.hasOwnProperty('animateOutDuration'))
         {
-            console.log("Has animateOutDuration and is "+parameters.animateOutDuration);
             this.animateOutDuration = parameters.animateOutDuration;
         }
         else
         {
-            console.log("No animateOutDuration found");
             this.animateOutDuration = "400";
         }
         /* Check for closeButton */
         if (parameters.hasOwnProperty('closeButton'))
         {
-            console.log("Has closeButton and is "+parameters.closeButton);
             this.closeButton = parameters.closeButton;
         }
         else
         {
-            console.log("No closeButton found");
             this.closeButton = true;
         }
         /* Check for closeButtonColor */
         if (parameters.hasOwnProperty('closeButtonColor'))
         {
-            console.log("Has closeButtonColor and is "+parameters.closeButtonColor);
             this.closeButtonColor = parameters.closeButtonColor;
         }
         else
         {
-            console.log("No closeButtonColor found");
             this.closeButtonColor = "#000";
         }
         /* Check for frame */
         if (parameters.hasOwnProperty('frame'))
         {
-            console.log("Has frame and is "+parameters.frame);
             this.frame = parameters.frame;
         }
         else
         {
-            console.log("No frame found");
             this.frame = "frame";
         }
-
+        /* Check for beforeEnter */
+        if (parameters.hasOwnProperty('beforeEnter'))
+        {
+            this.beforeEnter = parameters.beforeEnter;
+        }
+        else
+        {
+            this.beforeEnter = doNothing;
+        }
+        /* Check for afterEnter */
+        if (parameters.hasOwnProperty('afterEnter'))
+        {
+            this.afterEnter = parameters.afterEnter;
+        }
+        else
+        {
+            this.afterEnter = doNothing;
+        }
+        /* Check for beforeLeave */
+        if (parameters.hasOwnProperty('beforeLeave'))
+        {
+            this.beforeLeave = parameters.beforeLeave;
+        }
+        else
+        {
+            this.beforeLeave = doNothing;
+        }
+        /* Check for afterLeave */
+        if (parameters.hasOwnProperty('afterLeave'))
+        {
+            this.afterLeave = parameters.afterLeave;
+        }
+        else
+        {
+            this.afterLeave = doNothing;
+        }
+        /* Check for onClick */
+        if (parameters.hasOwnProperty('onClick'))
+        {
+            this.onClick = parameters.onClick;
+            this.clickable = true;
+        }
+        else
+        {
+            this.onClick = doNothing;
+            this.clickable = false;
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
 
         var object = this;
         var el = document.createElement("div");
@@ -225,11 +258,14 @@ function JSAlerts(params)
             el.appendChild(close_button);
         }
 
-
         var el_content = document.createElement("div");
         el_content.innerHTML = this.text;   //Can also take HTML text as input --> this makes it simpler to extend and include HTML.
-        // el.innerHTML = this.text;   //Can also take HTML text as input --> this makes it simpler to extend and include HTML.
-        //el.className = "frame error text slideInRight";
+        //Check if onClick has been attached.
+        if (this.clickable)
+        {
+            el_content.onclick = this.onClick;  //If clickable, attach the onclick event
+            el_content.style.cursor = "pointer";
+        }
         el.appendChild(el_content);
         el.className = this.frame + " " + this.style + " " + this.animationIn;
 
@@ -239,28 +275,26 @@ function JSAlerts(params)
         //-------------------------------------------------------------
 
 
-
-
         /* fire --> fires the notification */
         this.fire = function(resolve, reject)
         {
             //Create a promise for creation of the notification.
-            console.log("Fire called")
             this.parentEl.appendChild(el);
+            this.beforeEnter();     //Call beforeEnter right after appending the notification element.
+            window.setTimeout(function(){
+                object.afterEnter();  //Call afterEnter after the animationIn completes.
+            }, this.animateInDuration);
+
             window.setTimeout(function()
             {
-                resolve(el);
+                resolve(el);    //Resolve the promise once the duration completes.
             }, this.duration);
-
-
         }
         //Wrap this in a promise
         this.p1 = new Promise
         (
             function(resolve, reject)
             {
-                console.log("Creating promise")
-                console.log("Object just before fire is "+object);
                 var el = object.fire(resolve, reject);
             }
         )
@@ -268,22 +302,14 @@ function JSAlerts(params)
         (
             function(el)
             {
-                // console.log("Value from promise is "+el);
-                // console.log("parentEl is "+parentEl);
-                // console.log("child object is "+object);
-
                 if (object.autoClose)
                 {
                     object.destroy(el);
-                    console.log("Died a natural death");
                 }
-
-
-
             }
         ).catch(function(error)
         {
-            console.log("error is "+error);
+            console.log("Something went wrong. This might be helpful: "+error);
         })
 
         return el;
@@ -292,18 +318,14 @@ function JSAlerts(params)
 
     this.destroy = function(el)
     {
-        console.log("Destroy has been called and this is "+this)
+
         var object = this;
         var destroy_promise = new Promise
         (
             function(resolve, reject)
             {
-                //el.className = "frame error text slideOutTop";
-                //el.className += " slideOutTop";
-                //console.log("animationOut is "+object.animationOut)
                 el.className += " " + object.animationOut;
-
-
+                object.beforeLeave();    //Call beforeLeave here, so that the callback is fired just before the animationOut kicks in.
                 //-------------------------------------------------------------
                 //Check for browser type here --> whether it is webkit based or IE or moz.
                 el.style.WebkitAnimationDuration = parseFloat(object.animateOutDuration/1000).toString() + "s";
@@ -311,6 +333,7 @@ function JSAlerts(params)
 
                 window.setTimeout(function()
                 {
+                    object.afterLeave();    //Call afterLeave right after the animation completes, and before the notification is removed from the parent element.
                     resolve(el);
                 }, object.animateOutDuration);
             }
@@ -321,7 +344,10 @@ function JSAlerts(params)
             {
                 parentEl.removeChild(el);
             }
-        )
+        ).catch(function(error)
+        {
+            console.log("Something went wrong. This might be helpful: "+error);
+        })
     }
 
 
@@ -342,4 +368,9 @@ function JSAlerts(params)
         this.animationOut = typeof animationOut !== 'undefined' ?  animationOut : "slideOutTop";
     }
 
+}
+
+function doNothing()
+{
+    //This is a placeholder callback function that is used for JSAlerts events. This will be called whenever an event occurs, in case a callback hasn't been initialized.
 }

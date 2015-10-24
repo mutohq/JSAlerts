@@ -10,6 +10,27 @@
     </body>
     <script src="js/jsalerts.js" type="text/javascript"></script>
     <script type="text/javascript">
+        function beforeEnter()
+        {
+            console.log("Just before entering");
+        }
+        function afterEnter()
+        {
+            console.log("After entering");
+        }
+        function beforeLeave()
+        {
+            console.log("Just before leaving");
+        }
+        function afterLeave()
+        {
+            console.log("Right after leaving");
+        }
+        function onClick()
+        {
+            alert("You clicked!")
+        }
+
         window.onload = function()
         {
             var new_alert = new JSAlerts({
@@ -27,17 +48,23 @@
 
 
             new_alert.Notify({
-                text : "<p style='text-align: left;'>Hello</p>",
+                text : "<p style='text-align: left;'>Hello</p><input type='text'>",
                 duration : "2000",
                 animationIn : "slideInRight",
                 animationOut : "slideOutTop",
                 closeButtonColor : "rgb(255, 255, 255)",
                 animateInDuration : "800",
                 animateOutDuration : "800",
-                // autoClose : false,
+                autoClose : false,
                 closeButton : true,
                 style : "success",
-                frame : "frame-redundant"
+                frame : "frame",
+                beforeEnter : beforeEnter,
+                afterEnter : afterEnter,
+                beforeLeave : beforeLeave,
+                afterLeave : afterLeave,
+                onClick : onClick
+
             });
 
             // setInterval(function(){
