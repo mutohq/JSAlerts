@@ -73,16 +73,18 @@
             //     new_alert.destroy(notify_el);
             // }, 10000);
 
+            var HTMLtext = "<img src='http://placehold.it/50x50' style='margin: 5px 0px 0px 0px;'/><span style='margin: 5px; position:relative; top: -20px;'>Hello</span>"
+
 
             new_alert.Notify({
-                text : "<p style='text-align: left;'>Hello</p>",
+                text : HTMLtext,
                 duration : "2000",
                 animationIn : "fadeIn",
                 animationOut : "slideOutRight",
                 closeButtonColor : "rgb(255, 255, 255)",
                 animateInDuration : "400",
                 animateOutDuration : "300",
-                autoClose : true,
+                autoClose : false,
                 closeButton : true,
                 style : "error",
                 frame : "frame",
