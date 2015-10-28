@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="css/jsalerts.css">
         <link rel="stylesheet" href="css/slide.css">
         <link rel="stylesheet" href="css/fade.css">
+        <link rel="stylesheet" href="css/grow.css">
     </head>
     <body>
         <h1>Hi There</h1>
@@ -61,8 +62,8 @@
         window.onload = function()
         {
             var new_alert = new JSAlerts({
-                bottom : "2em",
-                right : "2em"
+                top : "2em",
+                left : "2em"
             });
             // var notify_el = new_alert.Notify({
             //     text: "<p style='text-align: left;'>Hello</p>",
@@ -73,20 +74,20 @@
             //     new_alert.destroy(notify_el);
             // }, 10000);
 
-            var HTMLtext = "<img src='http://placehold.it/50x50' style='margin: 5px 0px 0px 0px;'/><span style='margin: 5px; position:relative; top: -20px;'>Hello</span>"
-
+            //var HTMLtext = "<img src='http://placehold.it/50x50' style='margin: 5px 0px 0px 0px;'/><span style='margin: 5px; position:relative; top: -20px;'>Hello</span>"
+            var HTMLtext = "<p>Hello</p>";
 
             new_alert.Notify({
                 text : HTMLtext,
-                duration : "2000",
-                animationIn : "slideInRight",
-                animationOut : "slideOutRight",
+                duration : "4000",
+                animationIn : "slideInLeft",
+                animationOut : "slideOutTop",
                 closeButtonColor : "rgb(255, 255, 255)",
-                animateInDuration : "400",
-                animateOutDuration : "300",
-                autoClose : false,
+                animateInDuration : "800",
+                animateOutDuration : "800",
+                autoClose : true,
                 closeButton : true,
-                style : "error",
+                style : "success",
                 frame : "frame",
                 beforeEnter : beforeEnter,
                 afterEnter : afterEnter,

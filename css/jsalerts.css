@@ -28,7 +28,7 @@
 
 .error
 {
-    background-color: #ff0000;
+    background-color: rgba(255, 0, 0, 0.75);
     color: #eee;
 }
 
@@ -66,6 +66,6 @@
 
 .success
 {
-    background-color: #00ff00;
+    background-color: rgba(0, 255, 0, 0.75);
     color: #000;
 }
