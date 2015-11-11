@@ -1,11 +1,11 @@
 /* Define In classes here */
 
-.fadeIn
-{
-    -moz-animation-name: fadeIn;
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
+.fadeIn {
+	-moz-animation-name: fadeIn;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
 }
+
 
 /*.fadeInRight
 {
@@ -29,17 +29,14 @@
 }*/
 
 
-
-
-
 /* Define Out classes here */
 
-.fadeOut
-{
-    -moz-animation-name: fadeOut;
-    -webkit-animation-name: fadeOut;
-    animation-name: fadeOut;
+.fadeOut {
+	-moz-animation-name: fadeOut;
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
 }
+
 
 /*.fadeOutRight
 {
@@ -63,52 +60,35 @@
 }*/
 
 
-
 /* Define In transitions here */
-@-moz-keyframes fadeIn
-{
-    from
-    {
 
-        opacity: 0;
-    }
-
-    to
-    {
-
-        opacity: 1;
-    }
+@-moz-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
-@-webkit-keyframes fadeIn
-{
-    from
-    {
-
-        opacity: 0;
-    }
-
-    to
-    {
-
-        opacity: 1;
-    }
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
-@keyframes fadeIn
-{
-    from
-    {
-
-        opacity: 0;
-    }
-
-    to
-    {
-
-        opacity: 1;
-    }
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
+
 
 /*@-moz-keyframes fadeInRight
 {
@@ -245,54 +225,35 @@
 }*/
 
 
-
-
-
-
 /* Define Out transitions here */
-@-moz-keyframes fadeOut
-{
-    from
-    {
 
-        opacity: 1;
-    }
-
-    to
-    {
-
-        opacity: 0;
-    }
-}
-@-webkit-keyframes fadeOut
-{
-    from
-    {
-
-        opacity: 1;
-    }
-
-    to
-    {
-
-        opacity: 0;
-    }
+@-moz-keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
 }
 
-@keyframes fadeOut
-{
-    from
-    {
-
-        opacity: 1;
-    }
-
-    to
-    {
-
-        opacity: 0;
-    }
+@-webkit-keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
 }
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
 
 /*@-moz-keyframes fadeOutRight
 {
