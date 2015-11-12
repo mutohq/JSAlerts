@@ -23,7 +23,7 @@
 	min-width: 250px;
 	max-width: 250px;
 	height: auto;
-	border: 1px solid transparent;
+	/*border: 1px solid transparent;*/
 	border-radius: 10px;
 	position: relative;
 	margin: 10px 0;
@@ -31,8 +31,11 @@
 }
 
 .error {
-	background-color: rgba(255, 0, 0, 0.75);
-	color: #eee;
+	/*background-color: rgba(255, 0, 0, 0.75);
+	color: #eee;*/
+	background-color: #fddede;
+	color: #923535;
+	border-color: #923535;
 }
 
 .frame-redundant {
@@ -57,9 +60,9 @@
 	cursor: pointer;
 }
 
-.close-button:hover {
+/*.close-button:hover {
 	background-color: rgba(0, 0, 0, 0.2);
-}
+}*/
 
 .close-button-color {
 	color: #2c2c2c;
@@ -67,6 +70,27 @@
 
 .success {
 	/*background-color: rgba(0, 255, 0, 0.75);*/
-	background-color: #2b6a94;
-	color: #2c2c2c;
+	/*	background-color: #2b6a94;
+	color: #2c2c2c;*/
+	background-color: #d2f1eb;
+	color: #11705c;
+	border-color: #11705c;
+}
+
+.default {
+	background-color: #fff;
+	color: #575757;
+	border-color: #e1e1e1;
+}
+
+.info {
+	background-color: #d7effb;
+	color: #216a8c;
+	border-color: #216a8c;
+}
+
+.warning {
+	background-color: #fdf5df;
+	color: #947c39;
+	border-color: #947c39;
 }
