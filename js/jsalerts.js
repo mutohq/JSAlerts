@@ -271,11 +271,9 @@ function JSAlerts(params)
         //Attach the close button to the element here if this.closeButton is true.
         if (this.closeButton)
         {
-            var close_button = document.createElement("input");
-            close_button.value = "x";
-            close_button.type = "button";
-            close_button.style.color = this.closeButtonColor;
-            close_button.className = "close-button";
+            var close_button = document.createElement("img");
+            close_button.src = "images/close.png";
+			close_button.className = "notification-action";
 
             //Add event handlers of close_button here
             close_button.onclick = function()
