@@ -6,7 +6,7 @@
 }
 
 * {
-	font-family: "Montserrat";
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	/*font-weight: lighter;*/
 }
 
@@ -58,6 +58,7 @@
 	border: none;
 	padding: 0px 5px;
 	cursor: pointer;
+	outline: none;
 }
 
 /*.close-button:hover {
@@ -65,32 +66,38 @@
 }*/
 
 .close-button-color {
-	color: #2c2c2c;
+	color: #29B6F6;
+}
+
+.default {
+	background-color: #fff;
+	color: #000000;
+	border-bottom: 5px solid black;
+}
+
+.default-2 {
+	background-color: #fff;
+	color: #000000;
+	border-left: 5px solid black;
+}
+
+.info {
+	background-color: #fff;
+	color: #29B6F6;
+	border-bottom: 5px solid #29B6F6;
 }
 
 .success {
 	/*background-color: rgba(0, 255, 0, 0.75);*/
 	/*	background-color: #2b6a94;
 	color: #2c2c2c;*/
-	background-color: #d2f1eb;
-	color: #11705c;
-	border-color: #11705c;
-}
-
-.default {
 	background-color: #fff;
-	color: #575757;
-	border-color: #e1e1e1;
-}
-
-.info {
-	background-color: #d7effb;
-	color: #216a8c;
-	border-color: #216a8c;
+	color: green;
+	border-bottom: 5px solid green;
 }
 
 .warning {
-	background-color: #fdf5df;
-	color: #947c39;
-	border-color: #947c39;
+	background-color: #fff;
+	color: red;
+	border-bottom: 5px solid red;
 }
