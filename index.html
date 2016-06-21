@@ -11,33 +11,6 @@
 </head>
 
 <body>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-	<h1>Hi There</h1>
-
-	<!--<p class="alert red text">HelloHelloHelloHelloHello Hello HelloHelloHelloHelloHello Hello HelloHelloHelloHelloHello Hello HelloHelloHelloHelloHello Hello</p>-->
 </body>
 <script src="js/jsalerts.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -75,21 +48,90 @@
 		//     new_alert.destroy(notify_el);
 		// }, 10000);
 
-		//var HTMLtext = "<img src='http://placehold.it/50x50' style='margin: 5px 0px 0px 0px;'/><span style='margin: 5px; position:relative; top: -20px;'>Hello</span>"
-		var HTMLtext = "<p>Hello</p>";
-
+		//var HTMLtext = "<img src='http://placehold.it/50x50' style='margin: 5px 0px 0px 0px;'/><span style='margin: 5px; position:relative; top: -20px;'>Hello</span>";
+		var HTMLtext = "<p>Default</p>";
+		
 		new_alert.Notify({
 			text: HTMLtext,
 			duration: "2000",
 			/*animationIn: "slideInLeft",*/
 			animationIn: "flipin",
 			animationOut: "slideOutLeft",
-			closeButtonColor: "#006064",
+			closeButtonColor: "#grey",
 			animateInDuration: "800",
 			animateOutDuration: "800",
-			autoClose: true,
+			autoClose: false,
+			closeButton: true,
+			style: "default",
+			frame: "frame",
+			beforeEnter: beforeEnter,
+			afterEnter: afterEnter,
+			beforeLeave: beforeLeave,
+			afterLeave: afterLeave,
+			onClick: onClick
+
+		});
+		
+		var HTMLtext = "<p>Info</p>";
+		
+		new_alert.Notify({
+			text: HTMLtext,
+			duration: "2000",
+			/*animationIn: "slideInLeft",*/
+			animationIn: "flipin",
+			animationOut: "slideOutLeft",
+			closeButtonColor: "#grey",
+			animateInDuration: "800",
+			animateOutDuration: "800",
+			autoClose: false,
+			closeButton: true,
+			style: "info",
+			frame: "frame",
+			beforeEnter: beforeEnter,
+			afterEnter: afterEnter,
+			beforeLeave: beforeLeave,
+			afterLeave: afterLeave,
+			onClick: onClick
+
+		});
+		
+		var HTMLtext = "<p>Success</p>";
+		
+		new_alert.Notify({
+			text: HTMLtext,
+			duration: "2000",
+			/*animationIn: "slideInLeft",*/
+			animationIn: "flipin",
+			animationOut: "slideOutLeft",
+			closeButtonColor: "#grey",
+			animateInDuration: "800",
+			animateOutDuration: "800",
+			autoClose: false,
 			closeButton: true,
 			style: "success",
+			frame: "frame",
+			beforeEnter: beforeEnter,
+			afterEnter: afterEnter,
+			beforeLeave: beforeLeave,
+			afterLeave: afterLeave,
+			onClick: onClick
+
+		});
+		
+		var HTMLtext = "<p>Warning</p>";
+		
+		new_alert.Notify({
+			text: HTMLtext,
+			duration: "2000",
+			/*animationIn: "slideInLeft",*/
+			animationIn: "flipin",
+			animationOut: "slideOutLeft",
+			closeButtonColor: "#grey",
+			animateInDuration: "800",
+			animateOutDuration: "800",
+			autoClose: false,
+			closeButton: true,
+			style: "warning",
 			frame: "frame",
 			beforeEnter: beforeEnter,
 			afterEnter: afterEnter,
