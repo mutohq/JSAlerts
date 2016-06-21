@@ -1,0 +1,124 @@
+/* Define In classes here */
+
+.growIn
+{
+    /*-moz-animation-name: growIn;
+    -webkit-animation-name: growIn;
+    animation-name: growIn;*/
+
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+}
+/* Define Out classes here */
+
+.growOut
+{
+    /*-moz-animation-name: growOut;
+    -webkit-animation-name: growOut;
+    animation-name: growOut;*/
+
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+}
+
+/* Define In transitions here */
+@-moz-keyframes growIn
+{
+    from
+    {
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -o-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+    }
+
+    to
+    {
+
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes growIn
+{
+    from
+    {
+
+        width: 0%;
+    }
+
+    to
+    {
+
+        width: 100%;
+    }
+}
+
+@keyframes growIn
+{
+    from
+    {
+
+        width: 0%;
+    }
+
+    to
+    {
+
+        width: 100%;
+    }
+}
+
+/* Define Out transitions here */
+@-moz-keyframes growOut
+{
+    from
+    {
+
+        width: 100%;
+    }
+
+    to
+    {
+
+        width: 0%;
+    }
+}
+@-webkit-keyframes growOut
+{
+    from
+    {
+
+        width: 100%;
+    }
+
+    to
+    {
+
+        width: 0%;
+    }
+}
+
+@keyframes growOut
+{
+    from
+    {
+
+        width: 100%;
+    }
+
+    to
+    {
+
+        width: 0%;
+    }
+}

@@ -4,9 +4,9 @@
 <head>
 	<title>JS Alerts</title>
 	<link rel="stylesheet" href="css/jsalerts.css">
-	<link rel="stylesheet" href="css/slide.css">
+	<!-- <link rel="stylesheet" href="css/slide.css">
 	<link rel="stylesheet" href="css/fade.css">
-	<link rel="stylesheet" href="css/grow.css">
+	<link rel="stylesheet" href="css/grow.css"> -->
 	<link rel="stylesheet" href="css/flipin.css">
 </head>
 
@@ -64,7 +64,7 @@
 	window.onload = function () {
 		var new_alert = new JSAlerts({
 			top: "2em",
-			left: "2em"
+			right: "2em"
 		});
 		// var notify_el = new_alert.Notify({
 		//     text: "<p style='text-align: left;'>Hello</p>",
@@ -80,14 +80,14 @@
 
 		new_alert.Notify({
 			text: HTMLtext,
-			duration: "4000",
+			duration: "2000",
 			/*animationIn: "slideInLeft",*/
 			animationIn: "flipin",
-			animationOut: "slideOutTop",
-			closeButtonColor: "rgb(255, 255, 255)",
+			animationOut: "slideOutLeft",
+			closeButtonColor: "#006064",
 			animateInDuration: "800",
 			animateOutDuration: "800",
-			autoClose: false,
+			autoClose: true,
 			closeButton: true,
 			style: "success",
 			frame: "frame",
