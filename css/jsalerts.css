@@ -101,3 +101,12 @@
 	color: red;
 	border-bottom: 5px solid red;
 }
+.warning-2 {
+	background-color: #fff;
+	color: red;
+	border-left: 5px solid red;
+}
+.notification-action {
+	float: right;
+	cursor: pointer;
+}
